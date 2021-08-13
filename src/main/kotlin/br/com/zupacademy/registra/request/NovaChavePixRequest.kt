@@ -7,6 +7,7 @@ import br.com.zupacademy.shared.enums.TipoDeChaveRequest
 import br.com.zupacademy.shared.enums.TipoDeContaRequest
 import br.com.zupacademy.shared.validation.ValidPixKey
 import io.micronaut.core.annotation.Introspected
+import org.slf4j.LoggerFactory
 import java.util.*
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size
 @ValidPixKey
 @Introspected
 class NovaChavePixRequest(
+
     @field:NotNull(message ="Dados inválidos")
     val tipoDeConta: TipoDeContaRequest?,
     @field:Size(max = 77)
@@ -21,7 +23,12 @@ class NovaChavePixRequest(
     @field:NotNull(message ="Dados inválidos")
     val tipoDeChave: TipoDeChaveRequest?) {
 
+    private val logger = LoggerFactory.getLogger(this::class.java)
+
     fun toModelGrpc(clientId: UUID): RegistraChavePixRequest{
+
+        logger.info("Convertendo NovaChavePixRequest para RegistraChavePixRequest")
+
         return RegistraChavePixRequest
             .newBuilder()
             .setClientId(clientId.toString())
