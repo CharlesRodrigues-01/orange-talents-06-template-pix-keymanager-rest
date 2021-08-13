@@ -19,7 +19,6 @@ class RemoveChavePixController(
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 
-
     @Delete("{clientId}/pix/{pixId}")
     fun remove(@PathVariable("clientId") clientId: UUID,
                @PathVariable("pixId") pixId: UUID): HttpResponse<Any> {
