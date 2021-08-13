@@ -20,8 +20,7 @@ class GlobalExceptionHandler : ExceptionHandler<StatusRuntimeException, HttpResp
             Status.INVALID_ARGUMENT.code -> Pair(HttpStatus.BAD_REQUEST, "Dados da requisição estão inválidos")
             Status.ALREADY_EXISTS.code -> Pair(HttpStatus.UNPROCESSABLE_ENTITY, statusDescription)
             else -> {
-                Pair(HttpStatus.INTERNAL_SERVER_ERROR, "Não foi possível completar a requisição, " +
-                                                        "erro: ${statusDescription} (${statusCode})")
+                Pair(HttpStatus.INTERNAL_SERVER_ERROR, "Não foi possível completar a requisição")
             }
         }
         return HttpResponse.status<JsonError>(httpStatus).body(JsonError(message))
