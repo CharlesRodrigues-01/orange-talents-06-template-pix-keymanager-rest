@@ -68,7 +68,7 @@ internal class GlobalExceptionHandlerTest{
     fun `deve retornar 500 quando qualquer outro erro for lançado`(){
 
         // cenário
-        val internalServerException = StatusRuntimeException(Status.UNKNOWN)
+        val internalServerException = StatusRuntimeException(Status.INTERNAL)
 
         // ação
         val response = GlobalExceptionHandler().handle(requestGeneric, internalServerException)
