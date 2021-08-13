@@ -2,7 +2,6 @@ package br.com.zupacademy.carrega
 
 import br.com.zupacademy.CarregaChavePixRequest
 import br.com.zupacademy.KeyManagerCarregaGrpcServiceGrpc
-import br.com.zupacademy.KeyManagerListaGrpcServiceGrpc
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
