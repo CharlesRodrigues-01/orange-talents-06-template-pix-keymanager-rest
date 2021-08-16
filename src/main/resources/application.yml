@@ -17,3 +17,12 @@ grpc:
 jackson:
   serialization:
     writeDatesAsTimestamps: false
+
+endpoints:
+  all:
+    port: ${HEALTH_PORT:8086}
+    sensitive: true
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS

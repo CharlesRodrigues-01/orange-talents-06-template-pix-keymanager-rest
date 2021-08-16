@@ -37,6 +37,8 @@ dependencies {
     implementation("io.micronaut.grpc:micronaut-grpc-client-runtime")
     implementation("org.hibernate:hibernate-validator:6.1.6.Final")
     implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+    implementation("io.micronaut:micronaut-management")
+
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
