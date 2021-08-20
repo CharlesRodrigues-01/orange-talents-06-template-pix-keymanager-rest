@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: keymanager-rest-configmap
+data:
+  SERVER_PORT: 8080
+  KEY_MANAGER_HOST: localhost
+  KEY_MANAGER_PORT: 50052
+  HEALTH_PORT: 8086
